@@ -18,7 +18,7 @@ function buscarVehiculo(id) {
 function iniciarComprar() {
 
     let codigoSeleccionado = parseInt(prompt(MENSAJE_INICIAL_COMPRA))
-    if ((codigoSeleccionado !== 1) && (codigoSeleccionado !== 2) && (codigoSeleccionado !== 3) && (codigoSeleccionado !== 4)) {
+    if ((codigoSeleccionado !== 1) && (codigoSeleccionado !== 2) && (codigoSeleccionado !== 3) && (codigoSeleccionado !== 4) || isNaN(codigoSeleccionado)) {
         alert("Ingresa una opción válida, por favor.")
         return
     }

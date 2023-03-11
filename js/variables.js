@@ -3,10 +3,10 @@ const INTERES = 1.07
 const DESCUENTO = 0.10
 
 const VEHICULOS = [
-                    {id: 1, nombre:'Peugeot Tweet', cilindrada: '125 cc', precio: 1_200},
-                    {id: 2, nombre:'Askoll eS', cilindrada: '50 cc', precio: 750},
-                    {id: 3, nombre:'Yamaha Tricity', cilindrada: '125 cc', precio: 1_850},
-                    {id: 4, nombre:'Yamaha XMAX', cilindrada: '300 cc', precio: 2_600},
+                    {id: 1, nombre:'Peugeot Tweet', cilindrada: '125cc', precio: 1_200},
+                    {id: 2, nombre:'Askoll eS', cilindrada: '50cc', precio: 750},
+                    {id: 3, nombre:'Yamaha Tricity', cilindrada: '125cc', precio: 1_850},
+                    {id: 4, nombre:'Yamaha XMAX', cilindrada: '300cc', precio: 2_600},
                 ]
                 
 
