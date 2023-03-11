@@ -69,8 +69,9 @@ button{
     border: none;
     width: 70%;
     font-family: 'Roboto Slab', serif;
-    box-shadow: 1px 0px black;
-
+    -webkit-box-shadow: 7px 8px 10px 0px rgba(98,98,99,1);
+    -moz-box-shadow: 7px 8px 10px 0px rgba(98,98,99,1);
+    box-shadow: 7px 8px 10px 0px rgba(98,98,99,1);
 }
 button:hover{
     background-color: rgb(99, 86, 86);

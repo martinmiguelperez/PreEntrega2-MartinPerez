@@ -1,12 +1,12 @@
 function inicioDeProceso() {
-    let LicenciaTipoA = prompt(MENSAJE_LICENCIA_A).toLocaleLowerCase().trim()
+    //let LicenciaTipoA = prompt(MENSAJE_LICENCIA_A).toUpperCase().trim()
+    let LicenciaTipoA = confirm(MENSAJE_LICENCIA_A)
 
-    let seleccionLicencia = ((LicenciaTipoA !== "si"))
-    if (seleccionLicencia) {
-        console.error("¡Debes tener licencia de conducir tipo 'A'! No puede continuar ")
+    if ((LicenciaTipoA !== true)) {
+        console.error("¡No puede continuar! Sepa disculpar.")
         return
     } else {
-        iniciarComprar()
+        inicioDeCompra()
     }
 }
 
@@ -15,7 +15,7 @@ function buscarVehiculo(id) {
     return resultado
 }
 
-function iniciarComprar() {
+function inicioDeCompra() {
 
     let codigoSeleccionado = parseInt(prompt(MENSAJE_INICIAL_COMPRA))
     if ((codigoSeleccionado !== 1) && (codigoSeleccionado !== 2) && (codigoSeleccionado !== 3) && (codigoSeleccionado !== 4) || isNaN(codigoSeleccionado)) {
@@ -24,13 +24,13 @@ function iniciarComprar() {
     }
 
     let seleccionado = buscarVehiculo(codigoSeleccionado)
-    let mensajeProductoSeleccionado = `Usted selecciono:  \n ${seleccionado.nombre} | ${seleccionado.cilindrada}. \n Precio: ${seleccionado.precio} €.`
+    let mensajeProductoSeleccionado = `Usted seleccionó:  \n ${seleccionado.nombre} | ${seleccionado.cilindrada}. \n Precio: ${seleccionado.precio} €.`
     alert(mensajeProductoSeleccionado)
     CARRITO_MOTOS.push(seleccionado)
 
     let respuestaNuevaSeleccion = confirm("¿Deseas seguir comprando?")
     if (respuestaNuevaSeleccion) {
-        iniciarComprar()
+        inicioDeCompra()
     } else {
         finalizarCompra()
     }
@@ -53,21 +53,16 @@ function finalizarCompra() {
     const ADQUIRIR = new CompraVehiculo(CARRITO_MOTOS)
     alert(`El valor subtotal de su carrito es de ${ADQUIRIR.obtenerSubTotal()}  €`)
 
-
     let tipoDePago = parseInt(prompt(MENSAJE_FORMA_PAGO))
-
-    let seleccionPago = ((tipoDePago !== 1) && (tipoDePago !== 2) && (tipoDePago !== 3))
-
-    if (seleccionPago) {
+    if ((tipoDePago !== 1) && (tipoDePago !== 2) && (tipoDePago !== 3)) {
         alert("Ingresa una opción válida, por favor.")
         return
     }
 
-
     switch (tipoDePago) {
         case 1:
             totalContado = ADQUIRIR.obtenerSubTotal() - (ADQUIRIR.obtenerSubTotal() * DESCUENTO)
-            alert(" Pagar un TOTAL al contado de: € " + totalContado.toFixed(2) + "\n" +
+            alert("Pagar un TOTAL al contado de: € " + totalContado.toFixed(2) + "\n" +
                 "Por pago al contado tiene DESCUENTO de: € " + (ADQUIRIR.obtenerSubTotal() * DESCUENTO).toFixed(2))
             break;
 
