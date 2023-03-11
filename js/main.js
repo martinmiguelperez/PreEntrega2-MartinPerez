@@ -1,5 +1,4 @@
 function inicioDeProceso() {
-    //let LicenciaTipoA = prompt(MENSAJE_LICENCIA_A).toUpperCase().trim()
     let LicenciaTipoA = confirm(MENSAJE_LICENCIA_A)
 
     if ((LicenciaTipoA !== true)) {
