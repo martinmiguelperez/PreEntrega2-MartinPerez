@@ -26,10 +26,7 @@ function iniciarComprar() {
     let seleccionado = buscarVehiculo(codigoSeleccionado)
     let mensajeProductoSeleccionado = `Usted selecciono:  \n ${seleccionado.nombre} | ${seleccionado.cilindrada}. \n Precio: ${seleccionado.precio} €.`
     alert(mensajeProductoSeleccionado)
-
-    let vehiculoSeleccionado = buscarVehiculo(codigoSeleccionado)
-    CARRITO_MOTOS.push(vehiculoSeleccionado)
-
+    CARRITO_MOTOS.push(seleccionado)
 
     let respuestaNuevaSeleccion = confirm("¿Deseas seguir comprando?")
     if (respuestaNuevaSeleccion) {
